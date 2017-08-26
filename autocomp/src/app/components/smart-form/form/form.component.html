@@ -1,0 +1,27 @@
+<form [formGroup]="smartForm" novalidate>
+
+    <md-input-container>
+        <md-placeholder>Resource name</md-placeholder>
+        <input mdInput [formControl]="nameControl" [mdAutocomplete]="nameAuto" [(ngModel)]="resource">
+    </md-input-container>
+    <md-autocomplete #nameAuto="mdAutocomplete" [displayWith]="displayOption">
+        <md-option *ngFor="let option of matchOptions | async" [value]="option">
+            {{ option.name }}
+        </md-option>
+    </md-autocomplete>
+
+    <md-input-container>
+        <md-placeholder>Resource name</md-placeholder>
+        <input mdInput [formControl]="nameEmptyControl" [mdAutocomplete]="nameEmptyAuto" [(ngModel)]="empty">
+    </md-input-container>
+    <md-autocomplete #nameEmptyAuto="mdAutocomplete" [displayWith]="displayOption">
+        <md-option *ngFor="let option of matchEmptyOptions | async" [value]="option">
+            {{ option.name }}
+        </md-option>
+    </md-autocomplete>
+
+</form>
+
+<p>
+    Empty: {{ empty.id }} {{ empty.name }}<br> Resource: {{ resource.id }} {{ resource.name }}
+</p>
