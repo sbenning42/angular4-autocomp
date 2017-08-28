@@ -1,0 +1,19 @@
+<div class="gallery">
+
+    <md-card *ngFor="let resource of handleSelection.resources" [@selectState]="resource.animationState">
+
+        <img md-card-image src="{{ resource.picture }}" alt="{{ resource.id + resource.name }}" [ngStyle]="{'filter': handleSelection.isHide(resource) ? 'grayscale(100%)' : 'grayscale(0%)' }">
+
+        <md-card-actions>
+
+            <a *ngIf="!handleSelection.isHide(resource)" md-raised-button (click)="handleSelection.hide(resource)">HIDE</a>
+            <a *ngIf="handleSelection.isHide(resource)" md-button (click)="handleSelection.reset(resource)">RESET</a>
+
+            <a *ngIf="!handleSelection.isShow(resource) && !handleSelection.isHide(resource)" md-raised-button (click)="handleSelection.show(resource)">SHOW</a>
+
+        </md-card-actions>
+
+    </md-card>
+
+
+</div>

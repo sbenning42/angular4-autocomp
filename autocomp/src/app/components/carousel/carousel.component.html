@@ -1,0 +1,12 @@
+<div class="my-carousel" [ngStyle]="{'width': getCarouselWidth(), 'height': getCarouselHeight()}">
+
+    <div *ngFor="let img of imgs; let i = index" [@imgState]="img.state" class="my-carousel-item" (swiperight)="goLeft()" (swipeleft)="goRight()">
+
+        <img class="my-carousel-img" src="{{ img.url }}" alt="{{ img.alt }}" [ngStyle]="{'width': getImgWidth(), 'height': getImgHeight()}">
+
+    </div>
+
+    <md-icon class="left" (click)="goLeft()">arrow_back</md-icon>
+    <md-icon class="right" (click)="goRight()">arrow_forward</md-icon>
+
+</div>

@@ -1,0 +1,12 @@
+.gallery {
+    display: flex;
+}
+
+md-card {
+    margin: 5px;
+    flex: 1;
+}
+
+.hidden-img {
+    filter: grayscale(100%);
+}

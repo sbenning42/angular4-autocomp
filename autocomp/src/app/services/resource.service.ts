@@ -7,8 +7,17 @@ export class ResourceService {
 
   static id = 0
 
-  _fakeNames = [
-    'vicky', 'alain', 'samuel', 'sarah', 'pascale', 'babriel', 'natasha', 'pierre', 'gg', 'bbu', 'ambre'
+  _fakes = [
+    {id: '1', name: 'vicky', picture: 'http://localhost:4200/assets/images/1.jpg'},
+    {id: '2', name: 'alain', picture: 'http://localhost:4200/assets/images/2.jpg'},
+    {id: '3', name: 'samuel', picture: 'http://localhost:4200/assets/images/3.jpg'},
+    {id: '4', name: 'sarah', picture: 'http://localhost:4200/assets/images/4.jpg'},
+    {id: '5', name: 'pascale', picture: 'http://localhost:4200/assets/images/5.jpg'},
+    /*{id: '5', name: 'gabriel', picture: 'http://localhost:4200/assets/images/6.jpg'},
+    {id: '6', name: 'natasha', picture: 'http://localhost:4200/assets/images/7.jpg'},
+    {id: '7', name: 'pierre', picture: 'http://localhost:4200/assets/images/8.jpg'},
+    {id: '8', name: 'gg', picture: 'http://localhost:4200/assets/images/9.jpg'},
+    {id: '9', name: 'ambre', picture: 'http://localhost:4200/assets/images/10.jpg'}*/
   ]
 
   resources: Resource[]
@@ -17,12 +26,12 @@ export class ResourceService {
 
   private _rdm(): number {
     const min = Math.ceil(0);
-    const max = Math.floor(11);
+    const max = Math.floor(10);
     return Math.floor(Math.random() * (max - min)) + min;
   }
 
-  private _fakeName(): string {
-    return this._fakeNames[this._rdm()]
+  private _fake(): Resource {
+    return this._fakes[this._rdm()]
   }
 
   empty(): Resource {
@@ -31,12 +40,12 @@ export class ResourceService {
 
   fakes(): Resource[] {
     const fakes: Resource[] = []
-    this._fakeNames.forEach((fkName: string) => fakes.push(new Resource(fkName, (++ResourceService.id).toString())))
+    this._fakes.forEach((fake: Resource) => fakes.push(fake))
     return fakes
   }
 
   fake(): Resource {
-    return new Resource(this._fakeName(), (++ResourceService.id).toString())
+    return this._fake()
   }
 
   gets(): Resource[] {
