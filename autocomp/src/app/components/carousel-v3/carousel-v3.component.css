@@ -1,0 +1,13 @@
+.carousel {
+    overflow: hidden;
+}
+
+.items {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.item {}
+
+.item-img {}

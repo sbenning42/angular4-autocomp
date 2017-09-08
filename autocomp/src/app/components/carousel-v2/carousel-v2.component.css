@@ -1,0 +1,40 @@
+.carousel-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    cursor: grab;
+}
+
+.carousel-container:active {
+    cursor: -webkit-grabbing;
+}
+
+.carousel-container>.image {
+    position: relative;
+}
+
+.carousel-container>.mirror {
+    position: absolute;
+    left: 0;
+}
+
+img {
+    display: block;
+}
+
+.carousel-container>.navigate {
+    position: absolute;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.carousel-container>.navigate.left {
+    top: calc(50% - 12px);
+    left: 0;
+}
+
+.carousel-container>.navigate.right {
+    top: calc(50% - 12px);
+    right: 0;
+}

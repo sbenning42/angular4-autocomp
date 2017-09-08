@@ -29,8 +29,13 @@ import { SmartFormComponent } from './components/smart-form/smart-form.component
 import { SpinComponent } from './components/spin/spin.component';
 import { FormComponent } from './components/smart-form/form/form.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
-import { CarouselComponent } from './components/carousel/carousel.component';
+// import { CarouselComponent } from './components/carousel/carousel.component';
 import { ResponsiveCarouselComponent } from './components/responsive-carousel/responsive-carousel.component';
+import { CarouselComponent } from './components/carousel-v2/carousel-v2.component';
+import { CarouselV3Component } from './components/carousel-v3/carousel-v3.component';
+import { CarouselV2MetaComponent } from './components/carousel-v2/carousel-v2-meta/carousel-v2-meta.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { SliderComponent } from './components/slider/slider.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +45,12 @@ import { ResponsiveCarouselComponent } from './components/responsive-carousel/re
     FormComponent,
     GalleryComponent,
     CarouselComponent,
-    ResponsiveCarouselComponent
+    ResponsiveCarouselComponent,
+    // CarouselV2Component,
+    CarouselV3Component,
+    CarouselV2MetaComponent,
+    DashboardComponent,
+    SliderComponent
   ],
   imports: [
     BrowserModule,

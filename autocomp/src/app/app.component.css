@@ -1,0 +1,9 @@
+.wrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+.wrap>* {
+    flex: 1;
+    margin: 8px;
+}

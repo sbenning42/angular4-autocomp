@@ -1,9 +1,12 @@
-.contain {
+.wrap {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
 }
 
-.item {
-    width: 300px;
+.box-carousel {
+    flex: 2;
+}
+
+.box-lorem {
+    flex: 1;
 }

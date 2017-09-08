@@ -1,0 +1,7 @@
+<div class="carousel" [ngStyle]="{ 'width': widthCarousel }">
+    <div class="items" (click)="animate('left')" (swipeleft)="animate('left')" [ngStyle]="">
+        <div class="item" *ngFor="let url of urls | async; let i = index" [@slide]="slideState" (@slide.start)="start($event)" (@slide.done)="done($event)" [ngStyle]="">
+            <img class="item-img {{ 'index' + i }}" src="{{ carousel?.templateUrl(i) }}" [ngStyle]="{ 'width': widthImg, 'min-width': minWidthImg }">
+        </div>
+    </div>
+</div>

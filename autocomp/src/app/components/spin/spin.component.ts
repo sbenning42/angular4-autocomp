@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-spin',
@@ -20,9 +21,14 @@ export class SpinComponent implements OnInit {
     'http://localhost:4200/assets/images/10.jpg',
   ]
 
-  constructor() { }
+  imgUrls: Observable<string[]>
 
-  ngOnInit() {
+  constructor() {
   }
 
+  ngOnInit() {
+    this.imgUrls = new Observable(subscriber => {
+      subscriber.next(this.urls)
+    })
+  }
 }

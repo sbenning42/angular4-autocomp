@@ -1,0 +1,31 @@
+<div class="carousel-container"
+    [ngStyle]="carouselStyle"
+    (window:resize)="onResize($event)"
+    (swipeleft)="animate('slideLeft')"
+    (swiperight)="animate('slideRight')"
+    >
+    
+    <div class="image" 
+        [@slide]="carouselAnimation?.imgState"
+        (@slide.start)="start($event)"
+        (@slide.done)="done($event)"
+        >
+        
+        <img src="{{ carouselSelect?.img }}" draggable="false" [ngStyle]="imgStyle">
+    
+    </div>
+    
+    <div *ngIf="isInAnimation()" class="mirror"
+        [ngStyle]="mirrorStyle"
+        [@slide]="carouselAnimation?.mirrorState">
+        
+        <img src="{{ carouselSelect?.mirror }}" draggable="false" [ngStyle]="imgStyle">
+    
+    </div>
+    
+    <md-icon class="navigate left" (click)="animate('slideRight')">navigate_before</md-icon>
+    <md-icon class="navigate right" (click)="animate('slideLeft')">navigate_next</md-icon>
+
+</div>
+
+<app-carousel-v2-meta *ngIf="false"></app-carousel-v2-meta>

@@ -1,0 +1,25 @@
+<div class="screen" [ngStyle]="{ 'width': width }">
+    <div class="scene" [@slide]="slideState" (@slide.done)="done($event)" (window:resize)="onResize()">
+
+        <div class="actor">
+            <img class="item" draggable="false" src="{{ totourl(0) }}">
+        </div>
+
+        <div class="actor" (swipeleft)="slideLeft()" (swiperight)="slideRight()">
+            <img class="item" draggable="false" src="{{ totourl(1) }}">
+        </div>
+
+        <div class="actor">
+            <img class="item" draggable="false" src="{{ totourl(2) }}">
+        </div>
+
+        <div class="actor shadow" *ngFor="let url of urls; let i = index">
+            <img class="item shadow" draggable="false" src="{{ url }}">
+        </div>
+
+    </div>
+
+    <md-icon class="controls left" (click)="slideRight()">navigate_before</md-icon>
+    <md-icon class="controls right" (click)="slideLeft()">navigate_next</md-icon>
+
+</div>

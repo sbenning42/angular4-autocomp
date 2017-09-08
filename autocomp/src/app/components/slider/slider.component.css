@@ -1,0 +1,42 @@
+.screen {
+    position: relative;
+    overflow: hidden;
+}
+
+.screen>.scene {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.screen>.scene>.shadow {
+    opacity: 0;
+}
+
+.screen>.scene>.actor {
+    flex: 1 0 100%;
+    cursor: -webkit-grab;
+}
+
+.screen>.scene>.actor:active {
+    cursor: -webkit-grabbing;
+}
+
+.screen>.scene>.actor>.item {
+    display: block;
+    width: 100%;
+}
+
+.screen>.controls {
+    cursor: pointer;
+    position: absolute;
+    top: calc(50% - 12px);
+}
+
+.screen>.left {
+    left: 0;
+}
+
+.screen>.right {
+    right: 0;
+}
